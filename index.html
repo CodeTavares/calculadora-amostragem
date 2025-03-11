@@ -5,70 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Amostragem</title>
     <style>
-        /* Reset de estilos padrão */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Corpo da página */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f0f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-        }
-
-        /* Container do formulário */
-        .container {
-            background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
         }
 
-        /* Título do formulário */
         h1 {
             text-align: center;
             margin-bottom: 20px;
             color: #333333;
         }
 
-        /* Estilos para os rótulos */
+        .form-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .form-wrapper {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
         label {
             display: block;
             margin-top: 10px;
             font-size: 14px;
             color: #555555;
+            text-align: left;
         }
 
-        /* Estilos para os campos de entrada */
         input {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            margin-bottom: 15px;
             border: 1px solid #cccccc;
             border-radius: 4px;
             font-size: 16px;
-            color: #333333;
-            background-color: #fafafa;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
         }
 
-        /* Estilo para o foco nos campos de entrada */
-        input:focus {
-            border-color: #4CAF50;
-            background-color: #ffffff;
-            outline: none;
-        }
-
-        /* Estilos para o botão */
         button {
             width: 100%;
             padding: 12px;
@@ -78,76 +73,113 @@
             border-radius: 4px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            margin-top: 10px;
         }
 
-        /* Efeito ao passar o mouse sobre o botão */
         button:hover {
             background-color: #45a049;
         }
 
-        /* Seção de resultados */
-        #resultado {
+        .resultado {
             margin-top: 20px;
             font-size: 14px;
             color: #333333;
-        }
-
-        #resultado h3 {
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #4CAF50;
-        }
-
-        #resultado p {
-            margin-bottom: 8px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Cálculo de Amostragem</h1>
-        <form onsubmit="event.preventDefault(); calcularPesoLiquido();">
-            <label for="cercado">Nome do Cercado:</label>
-            <input type="text" id="cercado" required>
+    <h1>Calculadora de Amostragem</h1>
+    <div class="form-container">
+        <div class="form-wrapper">
+            <h2>Air Fryer 01</h2>
+            <form onsubmit="event.preventDefault(); calcularPesoLiquido(1);">
+                <label for="cercado1">Nome do Cercado:</label>
+                <input type="text" id="cercado1" required>
+                <label for="amostra1">Número da Amostra:</label>
+                <input type="text" id="amostra1" required>
+                <label for="tara1">Valor da Tara (g):</label>
+                <input type="number" id="tara1" required>
+                <label for="peso_inicial1">Peso Inicial (g):</label>
+                <input type="number" id="peso_inicial1" required>
+                <label for="peso_final1">Peso Final (g):</label>
+                <input type="number" id="peso_final1" required>
+                <button type="submit">Resultado</button>
+            </form>
+            <div id="resultado1" class="resultado"></div>
+        </div>
 
-            <label for="amostra">Número da Amostra:</label>
-            <input type="text" id="amostra" required>
+        <div class="form-wrapper">
+            <h2>Air Fryer 02</h2>
+            <form onsubmit="event.preventDefault(); calcularPesoLiquido(2);">
+                <label for="cercado2">Nome do Cercado:</label>
+                <input type="text" id="cercado2" required>
+                <label for="amostra2">Número da Amostra:</label>
+                <input type="text" id="amostra2" required>
+                <label for="tara2">Valor da Tara (g):</label>
+                <input type="number" id="tara2" required>
+                <label for="peso_inicial2">Peso Inicial (g):</label>
+                <input type="number" id="peso_inicial2" required>
+                <label for="peso_final2">Peso Final (g):</label>
+                <input type="number" id="peso_final2" required>
+                <button type="submit">Resultado</button>
+            </form>
+            <div id="resultado2" class="resultado"></div>
+        </div>
 
-            <label for="tara">Valor da Tara (g):</label>
-            <input type="number" id="tara" required>
+        <div class="form-wrapper">
+            <h2>Air Fryer 03</h2>
+            <form onsubmit="event.preventDefault(); calcularPesoLiquido(3);">
+                <label for="cercado3">Nome do Cercado:</label>
+                <input type="text" id="cercado3" required>
+                <label for="amostra3">Número da Amostra:</label>
+                <input type="text" id="amostra3" required>
+                <label for="tara3">Valor da Tara (g):</label>
+                <input type="number" id="tara3" required>
+                <label for="peso_inicial3">Peso Inicial (g):</label>
+                <input type="number" id="peso_inicial3" required>
+                <label for="peso_final3">Peso Final (g):</label>
+                <input type="number" id="peso_final3" required>
+                <button type="submit">Resultado</button>
+            </form>
+            <div id="resultado3" class="resultado"></div>
+        </div>
 
-            <label for="peso_inicial">Peso Inicial (g):</label>
-            <input type="number" id="peso_inicial" required>
-
-            <label for="peso_final">Peso Final (g):</label>
-            <input type="number" id="peso_final" required>
-
-            <button type="submit">Resultado</button>
-        </form>
-
-        <div id="resultado"></div>
+        <div class="form-wrapper">
+            <h2>Air Fryer 04</h2>
+            <form onsubmit="event.preventDefault(); calcularPesoLiquido(4);">
+                <label for="cercado4">Nome do Cercado:</label>
+                <input type="text" id="cercado4" required>
+                <label for="amostra4">Número da Amostra:</label>
+                <input type="text" id="amostra4" required>
+                <label for="tara4">Valor da Tara (g):</label>
+                <input type="number" id="tara4" required>
+                <label for="peso_inicial4">Peso Inicial (g):</label>
+                <input type="number" id="peso_inicial4" required>
+                <label for="peso_final4">Peso Final (g):</label>
+                <input type="number" id="peso_final4" required>
+                <button type="submit">Resultado</button>
+            </form>
+            <div id="resultado4" class="resultado"></div>
+        </div>
     </div>
 
     <script>
-        function calcularPesoLiquido() {
-            const cercado = document.getElementById("cercado").value;
-            const amostra = document.getElementById("amostra").value;
-            const tara = parseFloat(document.getElementById("tara").value);
-            const pesoInicial = parseFloat(document.getElementById("peso_inicial").value);
-            const pesoFinal = parseFloat(document.getElementById("peso_final").value);
+        function calcularPesoLiquido(formId) {
+            const cercado = document.getElementById(`cercado${formId}`).value;
+            const amostra = document.getElementById(`amostra${formId}`).value;
+            const tara = parseFloat(document.getElementById(`tara${formId}`).value);
+            const pesoInicial = parseFloat(document.getElementById(`peso_inicial${formId}`).value);
+            const pesoFinal = parseFloat(document.getElementById(`peso_final${formId}`).value);
 
             const pesoLiquidoInicial = pesoInicial - tara;
             const pesoLiquidoFinal = pesoFinal - tara;
             const percentualCapimSeco = (pesoLiquidoInicial > 0) ? ((pesoLiquidoFinal / pesoLiquidoInicial) * 100).toFixed(2) : 0;
 
-            document.getElementById("resultado").innerHTML = `
+            document.getElementById(`resultado${formId}`).innerHTML = `
                 <h3>Resultados:</h3>
                 <p><strong>Cercado:</strong> ${cercado}</p>
                 <p><strong>Amostra:</strong> ${amostra}</p>
-                <p><strong>Tara:</strong> ${tara.toFixed(2)} g</p>
-                <p><strong>Peso Inicial:</strong> ${pesoInicial.toFixed(2)} g</p>
-                <p><strong>Peso Final:</strong> ${pesoFinal.toFixed(2)} g</p>
                 <p><strong>Peso Líquido Inicial:</strong> ${pesoLiquidoInicial.toFixed(2)} g</p>
                 <p><strong>Peso Líquido Final:</strong> ${pesoLiquidoFinal.toFixed(2)} g</p>
                 <p><strong>Percentual do Capim Seco:</strong> ${percentualCapimSeco}%</p>
