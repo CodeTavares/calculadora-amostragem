@@ -80,15 +80,4 @@ button:hover {
     color: #333333;
     text-align: left;
 }
-body {
-    font-family: 'Arial', sans-serif;
-    background-image: url('capim.jpg'); /* Substitua pelo nome correto do arquivo */
-    background-size: cover; /* Ajusta para cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição */
-    background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
+
