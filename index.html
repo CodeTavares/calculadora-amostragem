@@ -1,89 +1,106 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Amostragem</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script> <!-- Arquivo JavaScript separado -->
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-</head>
-<body>
-    <h1>Calculadora de Amostragem</h1>
-    <div class="form-container">
-        <div class="form-wrapper">
-            <h2>Air Fryer 01</h2>
-            <form onsubmit="event.preventDefault(); calcularPesoLiquido(1);">
-                <label for="cercado1">Nome do Cercado:</label>
-                <input type="text" id="cercado1" required>
-                <label for="amostra1">Número da Amostra:</label>
-                <input type="text" id="amostra1" required>
-                <label for="tara1">Valor da Tara (g):</label>
-                <input type="number" id="tara1" required>
-                <label for="peso_inicial1">Peso Inicial (g):</label>
-                <input type="number" id="peso_inicial1" required>
-                <label for="peso_final1">Peso Final (g):</label>
-                <input type="number" id="peso_final1" required>
-                <button type="submit">Resultado</button>
-            </form>
-            <div id="resultado1" class="resultado"></div>
-        </div>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
 
-        <div class="form-wrapper">
-            <h2>Air Fryer 02</h2>
-            <form onsubmit="event.preventDefault(); calcularPesoLiquido(2);">
-                <label for="cercado2">Nome do Cercado:</label>
-                <input type="text" id="cercado2" required>
-                <label for="amostra2">Número da Amostra:</label>
-                <input type="text" id="amostra2" required>
-                <label for="tara2">Valor da Tara (g):</label>
-                <input type="number" id="tara2" required>
-                <label for="peso_inicial2">Peso Inicial (g):</label>
-                <input type="number" id="peso_inicial2" required>
-                <label for="peso_final2">Peso Final (g):</label>
-                <input type="number" id="peso_final2" required>
-                <button type="submit">Resultado</button>
-            </form>
-            <div id="resultado2" class="resultado"></div>
-        </div>
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
+}
 
-        <div class="form-wrapper">
-            <h2>Air Fryer 03</h2>
-            <form onsubmit="event.preventDefault(); calcularPesoLiquido(3);">
-                <label for="cercado3">Nome do Cercado:</label>
-                <input type="text" id="cercado3" required>
-                <label for="amostra3">Número da Amostra:</label>
-                <input type="text" id="amostra3" required>
-                <label for="tara3">Valor da Tara (g):</label>
-                <input type="number" id="tara3" required>
-                <label for="peso_inicial3">Peso Inicial (g):</label>
-                <input type="number" id="peso_inicial3" required>
-                <label for="peso_final3">Peso Final (g):</label>
-                <input type="number" id="peso_final3" required>
-                <button type="submit">Resultado</button>
-            </form>
-            <div id="resultado3" class="resultado"></div>
-        </div>
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
 
-        <div class="form-wrapper">
-            <h2>Air Fryer 04</h2>
-            <form onsubmit="event.preventDefault(); calcularPesoLiquido(4);">
-                <label for="cercado4">Nome do Cercado:</label>
-                <input type="text" id="cercado4" required>
-                <label for="amostra4">Número da Amostra:</label>
-                <input type="text" id="amostra4" required>
-                <label for="tara4">Valor da Tara (g):</label>
-                <input type="number" id="tara4" required>
-                <label for="peso_inicial4">Peso Inicial (g):</label>
-                <input type="number" id="peso_inicial4" required>
-                <label for="peso_final4">Peso Final (g):</label>
-                <input type="number" id="peso_final4" required>
-                <button type="submit">Resultado</button>
-            </form>
-            <div id="resultado4" class="resultado"></div>
-        </div>
-    </div>
+.form-wrapper {
+    background-color: #ffffff60;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
+h2 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px #000000a9;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: left;
     
-</body>
-</html>
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: left;
+}
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4CAF50;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 3s linear infinite;
+    margin: 10px auto;
+    display: none;
+}
+
+/* Animação de rotação */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center center;
+}
