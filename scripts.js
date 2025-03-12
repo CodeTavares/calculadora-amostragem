@@ -19,3 +19,4 @@ function calcularPesoLiquido(formId) {
         <p><strong>Percentual do Capim Seco:</strong> ${percentualCapimSeco}%</p>
     `;
 }
+ 
