@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Amostragem</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <h1>Calculadora de Amostragem</h1>
+    <header>
+        <img src="fazenda.png" alt="Logo" class="logo">
+        <h1>Calculadora de Amostragem</h1>
+    </header>
     <div class="form-container">
         <div class="form-wrapper">
             <h2>Air Fryer 01</h2>
             <form onsubmit="event.preventDefault(); calcularPesoLiquido(1);">
                 <label for="cercado1">Nome do Cercado:</label>
                 <input type="text" id="cercado1" required>
+                <label for="piquete1">Número do Piquete:</label>
+                <input type="text" id="piquete1" required>
                 <label for="amostra1">Número da Amostra:</label>
                 <input type="text" id="amostra1" required>
                 <label for="tara1">Valor da Tara (g):</label>
@@ -33,6 +38,8 @@
             <form onsubmit="event.preventDefault(); calcularPesoLiquido(2);">
                 <label for="cercado2">Nome do Cercado:</label>
                 <input type="text" id="cercado2" required>
+                <label for="piquete2">Número do Piquete:</label>
+                <input type="text" id="piquete2" required>
                 <label for="amostra2">Número da Amostra:</label>
                 <input type="text" id="amostra2" required>
                 <label for="tara2">Valor da Tara (g):</label>
@@ -51,6 +58,8 @@
             <form onsubmit="event.preventDefault(); calcularPesoLiquido(3);">
                 <label for="cercado3">Nome do Cercado:</label>
                 <input type="text" id="cercado3" required>
+                <label for="piquete3">Número do Piquete:</label>
+                <input type="text" id="piquete3" required>
                 <label for="amostra3">Número da Amostra:</label>
                 <input type="text" id="amostra3" required>
                 <label for="tara3">Valor da Tara (g):</label>
@@ -69,18 +78,17 @@
             <form onsubmit="event.preventDefault(); calcularPesoLiquido(4);">
                 <label for="cercado4">Nome do Cercado:</label>
                 <input type="text" id="cercado4" required>
+                <label for="piquete4">Número do Piquete:</label>
+                <input type="text" id="piquete4"required>
                 <label for="amostra4">Número da Amostra:</label>
                 <input type="text" id="amostra4" required>
                 <label for="tara4">Valor da Tara (g):</label>
                 <input type="number" id="tara4" required>
-                <label for="peso_inicial4">Peso Inicial (g):</label>
+                <label for="peso_inicial3">Peso Inicial (g):</label>
                 <input type="number" id="peso_inicial4" required>
-                <label for="peso_final4">Peso Final (g):</label>
+                <label for="peso_final3">Peso Final (g):</label>
                 <input type="number" id="peso_final4" required>
                 <button type="submit">Resultado</button>
             </form>
             <div id="resultado4" class="resultado"></div>
-        </div>
-    </div> 
-</body>
-</html>
+ 
