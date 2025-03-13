@@ -37,5 +37,4 @@ function calcularPesoLiquido(formId) {
             resultadoDiv.innerHTML = `<p>Peso Líquido: <strong>${pesoLiquido.toFixed(2)} g</strong></p>`;
         }, 2000); // Tempo de carregamento simulado (2 segundos)
     }
-
 }
