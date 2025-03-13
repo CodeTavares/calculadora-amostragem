@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Amostragem</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h1>Calculadora de Amostragem</h1>
+    <div class="form-container">
+        <div class="form-wrapper">
+            <h2>Air Fryer 01</h2>
+            <form onsubmit="event.preventDefault(); calcularPesoLiquido(1);">
+                <label for="cercado1">Nome do Cercado:</label>
+                <input type="text" id="cercado1" required>
+                <label for="amostra1">Número da Amostra:</label>
+                <input type="text" id="amostra1" required>
+                <label for="tara1">Valor da Tara (g):</label>
+                <input type="number" id="tara1" required>
+                <label for="peso_inicial1">Peso Inicial (g):</label>
+                <input type="number" id="peso_inicial1" required>
+                <label for="peso_final1">Peso Final (g):</label>
+                <input type="number" id="peso_final1" required>
+                <button type="submit">Resultado</button>
+            </form>
+            <div id="resultado1" class="resultado"></div>
+        </div>
 
+        <div class="form-wrapper">
+            <h2>Air Fryer 02</h2>
+            <form onsubmit="event.preventDefault(); calcularPesoLiquido(2);">
+                <label for="cercado2">Nome do Cercado:</label>
+                <input type="text" id="cercado2" required>
+                <label for="amostra2">Número da Amostra:</label>
+                <input type="text" id="amostra2" required>
+                <label for="tara2">Valor da Tara (g):</label>
+                <input type="number" id="tara2" required>
+                <label for="peso_inicial2">Peso Inicial (g):</label>
+                <input type="number" id="peso_inicial2" required>
+                <label for="peso_final2">Peso Final (g):</label>
+                <input type="number" id="peso_final2" required>
+                <button type="submit">Resultado</button>
+            </form>
+            <div id="resultado2" class="resultado"></div>
+        </div>
+
+        <div class="form-wrapper">
+            <h2>Air Fryer 03</h2>
+            <form onsubmit="event.preventDefault(); calcularPesoLiquido(3);">
+                <label for="cercado3">Nome do Cercado:</label>
+                <input type="text" id="cercado3" required>
+                <label for="amostra3">Número da Amostra:</label>
+                <input type="text" id="amostra3" required>
+                <label for="tara3">Valor da Tara (g):</label>
+                <input type="number" id="tara3" required>
+                <label for="peso_inicial3">Peso Inicial (g):</label>
+                <input type="number" id="peso_inicial3" required>
+                <label for="peso_final3">Peso Final (g):</label>
+                <input type="number" id="peso_final3" required>
+                <button type="submit">Resultado</button>
+            </form>
+            <div id="resultado3" class="resultado"></div>
+        </div>
+
+        <div class="form-wrapper">
+            <h2>Air Fryer 04</h2>
+            <form onsubmit="event.preventDefault(); calcularPesoLiquido(4);">
+                <label for="cercado4">Nome do Cercado:</label>
+                <input type="text" id="cercado4" required>
+                <label for="amostra4">Número da Amostra:</label>
+                <input type="text" id="amostra4" required>
+                <label for="tara4">Valor da Tara (g):</label>
+                <input type="number" id="tara4" required>
+                <label for="peso_inicial4">Peso Inicial (g):</label>
+                <input type="number" id="peso_inicial4" required>
+                <label for="peso_final4">Peso Final (g):</label>
+                <input type="number" id="peso_final4" required>
+                <button type="submit">Resultado</button>
+            </form>
+            <div id="resultado4" class="resultado"></div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
